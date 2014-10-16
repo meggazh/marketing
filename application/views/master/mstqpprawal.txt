@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Binary Admin</title>
+    <link href="<?php echo base_url (); ?>assets/css/bootstrap.css" rel="stylesheet" />
+	<link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assest/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/chosen.css" rel="stylesheet">
+	
+    <link href="<?php echo base_url (); ?>assets/css/font-awesome.css" rel="stylesheet" />
+	 <link href="<?php echo base_url (); ?>assets/css/superfish.css" rel="stylesheet" />
+    <link href="<?php echo base_url (); ?>assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url (); ?>assets/css/custom.css" rel="stylesheet" />
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/hoverIntent.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/superfish.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/application.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap-tooltip.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>asset/colorbox/colorbox.css" />
+	<script src="<?php echo base_url(); ?>assets/colorbox/jquery.colorbox.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/chosen.jquery.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/hoverIntent.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/superfish.js"></script>
+	</head>
+
+	<body>
+		<h1><?php echo $judul; ?></h1>
+		<fieldset>
+			<form method="POST" action="<?php echo site_url('mstappr/proses_tambah_appr'); ?>">
+			<legend>
+			<h3>Add New Appropval</h3></legend>
+	  <table class="table-responsive">
+	    <tr>
+		<td>ID</td>
+	      <td><input type="text" name="idMstAppr"/></td>
+        </tr>
+        <tr>
+	      <td>Approval 1</td>
+	      <td><input type="text" name="MstAppr1" placeholder="MstAppr1"/></td>
+        </tr>
+	    <tr>
+	      <td>Approval 2</td>
+	      <td><input type="text" name="MstAppr2" placeholder="MstAppr2"/></td>
+        </tr>
+	    <tr>
+	      <td>Approval 3</td>
+	      <td><input type="text" name="MstAppr3" placeholder="MstAppr3"/></td>
+        </tr>
+	    <tr>
+	      <td>Approval 4</td>
+	      <td><input type="text" name="MstAppr4" placeholder="MstAppr4"/></td>
+        </tr>
+	    <tr>
+	      <td>&nbsp;</td>
+	      <td width="140"><input type="submit" name="simapn" value="Simpan" class="submitButton"></td>
+        </tr>
+    </table>	
+    </form>
+		</fieldset>
+		<hr>
+		<table cellpadding="5" cellspacing="5" width="100%" class="table-striped table-bordered table-hover">
+			<tr>
+				<th id="judul">No</td>
+				<th id="judul">Appropal1</td>
+				<th id="judul">Appropal3</td>
+				<th id="judul">Appropal3</td>
+				<th id="judul">Appropal4</td>
+				<th id="judul" colspan="2">Action</td>
+			</tr>
+			<?php foreach ($daftar as $a)	{?>
+			<tr id="hd" class="hd">
+				<td class="hd"><?php echo $a->idMstAppr; ?></td>
+				<td class="hd"><?php echo $a->MstAppr1; ?></td>
+				<td class="hd"><?php echo $a->MstAppr2; ?></td>
+				<td class="hd"><?php echo $a->MstAppr3; ?></td>
+				<td class="hd"><?php echo $a->MstAppr4; ?></td>
+				<td class="hd"><a href="<?php echo site_url ('mstappr/edit/'.$a->idMstAppr)?>"><input type="submit" value="Edit" class="submitButton"></a></td><td class="hd">
+				<a href="<?php echo site_url ('mstappr/hapus/'.$a->idMstAppr)?>"><input type="submit" value="Delete" class="submitButton"></a></td>
+			</tr>
+			<?php } ?>
+		</table>
+		<hr>
+		<p>
+			
+		</p>
+	</body>
+</html>

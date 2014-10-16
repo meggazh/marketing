@@ -1,0 +1,47 @@
+<?php
+	class M_crud extends CI_Model {
+		public function __construct() {
+			$this->load->database();
+		}
+
+		function get_crud_all() {
+			$query=$this->db->query("select * from siswa order by nama asc");
+			return $query->result();
+		}
+
+		function tambah() {
+			$data = array(
+				'nama' => $this->input->post('nama'),
+				'kelas' => $this->input->post('kelas'),
+				'kejuruan' => $this->input->post('kejuruan')
+			);
+			return $this->db->insert('siswa', $data);
+		}
+
+		function get_crud_edit($id) {
+				$this->db->where('id',$id);
+				$query = $this->db->get('siswa');
+				if($query ->num_rows > 0)
+			return $query;
+			else
+			return null;
+		}
+
+		function edit() {
+			$id = $this->input->post('id');
+			$data = array (
+			'nama' => $this->input->post('nama'),
+			'kelas' => $this->input->post('kelas'),
+			'kejuruan' => $this->input->post('kejuruan')
+			);
+			$this->db->where('id',$id);
+			$this->db->update('siswa',$data);
+		}
+
+		function hapus($id){
+			$this->db->where('id',$id);
+			$this->db->delete('siswa');
+		}
+	
+	}
+?>
