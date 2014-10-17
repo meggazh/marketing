@@ -1,0 +1,35 @@
+proses bisnis
+1)Mstappr itu table appropal/otorisasi jadi dokumen/transaksi tidak bisa cetak kalo ga ad ayang otorisasi/apropal
+yang apropal itu dari table mstep/mastemployee di bagi bedasarkan level
+
+2)mstchasis itu buat inputan chasis (mobil hino,isuzu)
+3)mstproduk itu buat inputan produk (QR-1 9500 ) itu di relasi sama mstspec (nama matrial)
+4)mstprice buat list harga di relasi sama master produk,di msterproduk kan ada id spec
+jadi ntr pa input  harga muncul semua data yang dari relasi mstpoduct sama mst spect di tabel price
+contoh inputan yang di inginkan di mstprice
+QR-1 9500 (dati table mstproduk)
+besi+garansi 1 thn(dari mstspec)
+Rp 100.000
+harga berlaku 19-01-2015
+
+5)di tabel quotationdtl (txnquodtl) kan ada idprduck 
+nah ntr pas manggil id produk
+muncul tuh di diteail sebagai value 
+contoh yang muncul 
+QR-1 besi+garansi+harga dari mstprice (nah si harga ini muncul sebagai value jadi klo hargadi price 10jt muncul 10jt tapi kalo di price 10 jt tapi yang di tawarkan 11 jt bisa di hapus itu yang 10jt jadi yang di save yang 11 juta
+nah ada lagi di diskon di header seharunya kan di detail jadi ada barang gini
+batu 1pcs 9000/pcs diskon 10%=8100
+baju 1pcs 10000/pcs ga diskon=10000
+
+nah itu buat diskon qty 
+yang di txkquodtl buat harga setelah diskon qty di atas=8100+10000=18100-50% NAH DISKON di bawah buat itu
+
+
+kalo yang di table txnquohdr sama tqnquadtl itu isi nya sama kaya quotation(terdiri dari txnquohdr+txnquodtl)
+jadi pas ambil id txnquohdr muncul semua data dari quotaion itu 
+
+
+
+
+
+ 
