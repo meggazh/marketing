@@ -98,15 +98,15 @@
 	      <td width="110">MstSatID 1</td>
         </tr>
 	    <tr>
-	      <td><input type="text" name="TxnQuotDtlNo" placeholder="TxnQuotDtlNo"/></td>
-	      <td><input type="text" name="TxnQuotHdrNoRev2" placeholder="TxnQuotHdrNoRev"/></td>
-	      <td><input type="text" name="TxnQuotDtlQty" placeholder="TxnQuotDtlQty"/></td>
-	      <td><input type="text" name="TxnQuotDtlUnitPrice" placeholder="TxnQuotDtlUnitPrice"/></td>
-	      <td><input type="text" name="TxnQuotDtlDiscount" placeholder="TxnQuotDtlDiscount"/></td>
-	      <td><input type="text" name="TxnQuotDtlDrawNo" placeholder="TxnQuotDtlDrawNo"/></td>
-	      <td><input type="text" name="TxnQuotDtlDrawDate" placeholder="TxnQuotDtlDrawDate"/></td>
-	      <td><input type="text" name="TxnQuotDtlRepair" placeholder="TxnQuotDtlRepair	"/></td>
-	      <td><select class="form-control" name="MstChasID">
+	      <td><input type="text" name="TxnQuotDtlNo[]" placeholder="TxnQuotDtlNo"/></td>
+	      <td><input type="text" name="TxnQuotHdrNoRev2[]" placeholder="TxnQuotHdrNoRev"/></td>
+	      <td><input type="text" name="TxnQuotDtlQty[]" placeholder="TxnQuotDtlQty"/></td>
+	      <td><input type="text" name="TxnQuotDtlUnitPrice[]" placeholder="TxnQuotDtlUnitPrice"/></td>
+	      <td><input type="text" name="TxnQuotDtlDiscount[]" placeholder="TxnQuotDtlDiscount"/></td>
+	      <td><input type="text" name="TxnQuotDtlDrawNo[]" placeholder="TxnQuotDtlDrawNo"/></td>
+	      <td><input type="text" name="TxnQuotDtlDrawDate[]" placeholder="TxnQuotDtlDrawDate"/></td>
+	      <td><input type="text" name="TxnQuotDtlRepair[]" placeholder="TxnQuotDtlRepair	"/></td>
+	      <td><select class="form-control" name="MstChasID[]">
 		<option value="" selected>--select Chasis--</option>
 		<?php 
 			if(empty($chasis)){
@@ -118,7 +118,7 @@
 			} ?>
        </select>
 	   </td>
-	      <td><select class="form-control" name="MstProductID">
+	      <td><select class="form-control" name="MstProductID[]">
 		<option value="" selected>--select Product--</option>
 		<?php 
 			if(empty($produk)){
@@ -130,7 +130,7 @@
 			} ?>
        </select>
 	   </td>
-	      <td><select class="form-control" name="MstTypeOrderID">
+	      <td><select class="form-control" name="MstTypeOrderID[]">
 		<option value="" selected>--select Type Order--</option>
 		<?php 
 			if(empty($salespic)){
@@ -142,7 +142,7 @@
 			} ?>
        </select>
 	   </td>
-	   <td><select class="form-control" name="MstSatID">
+	   <td><select class="form-control" name="MstSatID[]">
 		<option value="" selected>--select Satuan--</option>
 		<?php 
 			if(empty($satuan)){
@@ -155,7 +155,7 @@
        </select>
 	   </td>
         </tr>
-		<tr id="tambah">
+		<tr id="tambah-botton">
             <td colspan="12"><input type="button" class="btn-large btn-success"id="tambah" name="baris" value="tambah baris"/></td>
         </tr>
 	    <tr>
@@ -172,23 +172,39 @@
     
         var data='<tr>'
 		+'<td>'
-		+'<input type="text" name="TxnQuotDtlNo" placeholder="TxnQuotDtlNo"/></td>'
+		+'<input type="text" name="TxnQuotDtlNo[]" placeholder="TxnQuotDtlNo"/></td>'
 		+'<td>'
-		+'<td><input type="text" name="TxnQuotHdrNoRev2" placeholder="TxnQuotHdrNoRev"/></td>'
+		+'<td><input type="text" name="TxnQuotHdrNoRev2[]" placeholder="TxnQuotHdrNoRev"/></td>'
 	    +'<td>'
-		+'<input type="text" name="TxnQuotDtlQty" placeholder="TxnQuotDtlQty"/></td>'
+		+'<input type="text" name="TxnQuotDtlQty[]" placeholder="TxnQuotDtlQty"/></td>'
 	    +'<td>'
-		+'<input type="text" name="TxnQuotDtlUnitPrice" placeholder="TxnQuotDtlUnitPrice"/></td>'
+		+'<input type="text" name="TxnQuotDtlUnitPrice[]" placeholder="TxnQuotDtlUnitPrice"/></td>'
 	    +'<td>'
-		+'<input type="text" name="TxnQuotDtlDiscount" placeholder="TxnQuotDtlDiscount"/></td>'
+		+'<input type="text" name="TxnQuotDtlDiscount[]" placeholder="TxnQuotDtlDiscount"/></td>'
 	    +'<td>'
-		+'<input type="text" name="TxnQuotDtlDrawNo" placeholder="TxnQuotDtlDrawNo"/></td>'
+		+'<input type="text" name="TxnQuotDtlDrawNo[]" placeholder="TxnQuotDtlDrawNo"/></td>'
 	    +'<td>'
-		+'<input type="text" name="TxnQuotDtlDrawDate" placeholder="TxnQuotDtlDrawDate"/></td>'
+		+'<input type="text" name="TxnQuotDtlDrawDate[]" placeholder="TxnQuotDtlDrawDate"/></td>'
 	    +'<td>'
-		+'<input type="text" name="TxnQuotDtlRepair" placeholder="TxnQuotDtlRepair	"/></td>'
-		
-		$("#tambah").click(function(){
+		+'<input type="text" name="TxnQuotDtlRepair[]" placeholder="TxnQuotDtlRepair	"/></td>'
+		+'<td>'
+		+'<select class="form-control" name="MstSatID[]">'
+		+'<option value="" selected>--select Type Order--</option>'
+		+'</select></td>'
+		+'<td>'
+		+'<select class="form-control" name="MstSatID[]">'
+		+'<option value="" selected>--select Type Order--</option>'
+		+'</select></td>'
+		+'<td>'
+		+'<select class="form-control" name="MstSatID[]">'
+		+'<option value="" selected>--select Type Order--</option>'
+		+'</select></td>'
+		+'<td>'
+		+'<select class="form-control" name="MstSatID[]">'
+		+'<option value="" selected>--select Type Order--</option>'
+		+'</select></td>'
+		$("#tambah-botton").click(function(){
+		 alert('Mau nambah Baris nih Ceritanya');
             $("#tambah").before(data);
 		
         });
